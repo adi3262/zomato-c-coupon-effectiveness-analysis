@@ -1,0 +1,31 @@
+﻿restaurant_id,restaurant_name,city,cuisine,commission_rate
+1,Spice Route 1,Delhi,North Indian,22.0
+2,Urban Tadka 1,Mumbai,South Indian,18.0
+3,Biryani House 1,Bengaluru,Chinese,25.0
+4,Dosa Junction 1,Hyderabad,Biryani,18.0
+5,Wok Express 1,Pune,Fast Food,20.0
+6,Punjab Grill 1,Delhi,Desserts,20.0
+7,Pizza Corner 1,Mumbai,North Indian,20.0
+8,Sweet Truth 1,Bengaluru,South Indian,20.0
+9,Curry Leaf 1,Hyderabad,Chinese,18.0
+10,Burger Studio 1,Pune,Biryani,18.0
+11,Spice Route 2,Delhi,Fast Food,25.0
+12,Urban Tadka 2,Mumbai,Desserts,25.0
+13,Biryani House 2,Bengaluru,North Indian,22.0
+14,Dosa Junction 2,Hyderabad,South Indian,25.0
+15,Wok Express 2,Pune,Chinese,20.0
+16,Punjab Grill 2,Delhi,Biryani,20.0
+17,Pizza Corner 2,Mumbai,Fast Food,20.0
+18,Sweet Truth 2,Bengaluru,Desserts,18.0
+19,Curry Leaf 2,Hyderabad,North Indian,22.0
+20,Burger Studio 2,Pune,South Indian,20.0
+21,Spice Route 3,Delhi,Chinese,18.0
+22,Urban Tadka 3,Mumbai,Biryani,25.0
+23,Biryani House 3,Bengaluru,Fast Food,18.0
+24,Dosa Junction 3,Hyderabad,Desserts,20.0
+25,Wok Express 3,Pune,North Indian,22.0
+26,Punjab Grill 3,Delhi,South Indian,25.0
+27,Pizza Corner 3,Mumbai,Chinese,22.0
+28,Sweet Truth 3,Bengaluru,Biryani,25.0
+29,Curry Leaf 3,Hyderabad,Fast Food,22.0
+30,Burger Studio 3,Pune,Desserts,20.0

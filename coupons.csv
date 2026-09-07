@@ -1,0 +1,9 @@
+﻿coupon_id,coupon_code,coupon_type,discount_value,minimum_order_value,maximum_discount,start_date,end_date
+1,WELCOME50,Percentage,₹50.00,₹299.00,₹150.00,2025-01-01,2025-12-31
+2,SAVE100,Fixed,₹100.00,₹499.00,₹100.00,2025-01-01,2025-12-31
+3,WEEKEND20,Percentage,₹20.00,₹399.00,₹120.00,2025-01-01,2025-12-31
+4,FREEDLV,Delivery,₹0.00,₹249.00,₹60.00,2025-01-01,2025-12-31
+5,PAYDAY25,Percentage,₹25.00,₹599.00,₹200.00,2025-01-01,2025-12-31
+6,REPEAT75,Fixed,₹75.00,₹349.00,₹75.00,2025-01-01,2025-12-31
+7,FESTIVE30,Percentage,₹30.00,₹699.00,₹250.00,2025-10-01,2025-11-15
+8,FLASH40,Percentage,₹40.00,₹299.00,₹180.00,2025-06-01,2025-08-31

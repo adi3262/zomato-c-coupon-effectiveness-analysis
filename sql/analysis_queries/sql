@@ -1,0 +1,105 @@
+USE zomato_coupon_project;
+
+-- 1. Overall KPIs
+SELECT
+    COUNT(*) AS delivered_orders,
+    COUNT(DISTINCT customer_id) AS unique_customers,
+    ROUND(SUM(gross_order_value), 2) AS total_order_value,
+    ROUND(AVG(gross_order_value), 2) AS average_order_value,
+    ROUND(SUM(estimated_zomato_revenue), 2) AS total_revenue,
+    ROUND(SUM(estimated_profit), 2) AS total_profit
+FROM orders
+WHERE order_status = 'Delivered';
+
+
+-- 2. Coupon versus non-coupon performance
+SELECT
+    CASE
+        WHEN coupon_id IS NOT NULL AND discount_amount > 0
+            THEN 'Coupon Order'
+        ELSE 'Non-Coupon Order'
+    END AS order_type,
+    COUNT(*) AS total_orders,
+    ROUND(AVG(gross_order_value), 2) AS average_order_value,
+    ROUND(AVG(discount_amount), 2) AS average_discount,
+    ROUND(SUM(estimated_zomato_revenue), 2) AS total_revenue,
+    ROUND(AVG(estimated_profit), 2) AS average_profit,
+    ROUND(SUM(estimated_profit), 2) AS total_profit
+FROM orders
+WHERE order_status = 'Delivered'
+GROUP BY order_type;
+
+
+-- 3. Monthly revenue and profit
+SELECT
+    DATE_FORMAT(order_date, '%Y-%m') AS order_month,
+    COUNT(*) AS total_orders,
+    ROUND(SUM(estimated_zomato_revenue), 2) AS total_revenue,
+    ROUND(SUM(estimated_profit), 2) AS total_profit,
+    ROUND(SUM(discount_amount), 2) AS total_discount
+FROM orders
+WHERE order_status = 'Delivered'
+GROUP BY order_month
+ORDER BY order_month;
+
+
+-- 4. Coupon-code performance
+SELECT
+    c.coupon_code,
+    COUNT(o.order_id) AS total_uses,
+    ROUND(AVG(o.gross_order_value), 2) AS average_order_value,
+    ROUND(AVG(o.discount_amount), 2) AS average_discount,
+    ROUND(AVG(o.estimated_profit), 2) AS average_profit,
+    ROUND(SUM(o.estimated_profit), 2) AS total_profit
+FROM orders o
+JOIN coupons c
+    ON o.coupon_id = c.coupon_id
+WHERE o.order_status = 'Delivered'
+  AND o.discount_amount > 0
+GROUP BY c.coupon_id, c.coupon_code
+ORDER BY average_profit DESC;
+
+
+-- 5. Thirty-day repeat behaviour
+WITH ordered_data AS (
+    SELECT
+        order_id,
+        customer_id,
+        order_date,
+        CASE
+            WHEN coupon_id IS NOT NULL AND discount_amount > 0
+                THEN 'Coupon Order'
+            ELSE 'Non-Coupon Order'
+        END AS order_type,
+        LEAD(order_date) OVER (
+            PARTITION BY customer_id
+            ORDER BY order_date, order_id
+        ) AS next_order_date
+    FROM orders
+    WHERE order_status = 'Delivered'
+)
+
+SELECT
+    order_type,
+    COUNT(next_order_date) AS eligible_orders,
+    SUM(
+        CASE
+            WHEN DATEDIFF(next_order_date, order_date)
+                 BETWEEN 1 AND 30
+            THEN 1
+            ELSE 0
+        END
+    ) AS repeat_orders,
+    ROUND(
+        100.0 * SUM(
+            CASE
+                WHEN DATEDIFF(next_order_date, order_date)
+                     BETWEEN 1 AND 30
+                THEN 1
+                ELSE 0
+            END
+        ) / NULLIF(COUNT(next_order_date), 0),
+        2
+    ) AS repeat_rate_percent
+FROM ordered_data
+GROUP BY order_type;

@@ -1,0 +1,30 @@
+restaurant_id,restaurant_name,city,cuisine,coupon_orders,average_order_value,average_discount,total_revenue,average_profit,total_profit
+11,Spice Route 2,Delhi,Fast Food,1,1196.79,120.0,299.2,147.2,147.2
+30,Burger Studio 3,Pune,Desserts,3,1101.64,91.67,730.98,119.99,359.98
+22,Urban Tadka 3,Mumbai,Biryani,4,935.02,143.57,1095.02,98.18,392.74
+26,Punjab Grill 3,Delhi,South Indian,3,608.0,51.67,481.01,76.67,230.01
+24,Dosa Junction 3,Hyderabad,Desserts,4,878.34,101.67,837.67,75.75,302.99
+12,Urban Tadka 2,Mumbai,Desserts,1,1186.87,250.0,351.72,69.72,69.72
+4,Dosa Junction 1,Hyderabad,Biryani,1,1366.08,200.0,300.89,68.89,68.89
+9,Curry Leaf 1,Hyderabad,Chinese,5,765.49,89.0,888.95,56.79,283.95
+19,Curry Leaf 2,Hyderabad,North Indian,3,1144.29,183.33,815.23,56.41,169.23
+5,Wok Express 1,Pune,Fast Food,2,673.44,75.0,324.37,55.18,110.37
+27,Pizza Corner 3,Mumbai,Chinese,4,665.14,105.0,755.32,51.83,207.32
+29,Curry Leaf 3,Hyderabad,Fast Food,6,811.9,133.33,1291.69,49.95,299.69
+10,Burger Studio 1,Pune,Biryani,3,889.05,103.33,540.09,44.7,134.09
+2,Urban Tadka 1,Mumbai,South Indian,5,923.62,128.0,1016.25,43.25,216.25
+6,Punjab Grill 1,Delhi,Desserts,1,557.55,111.51,166.51,23.0,23.0
+15,Wok Express 2,Pune,Chinese,4,736.36,116.25,684.09,22.77,91.09
+20,Burger Studio 2,Pune,South Indian,3,561.58,72.84,381.95,22.48,67.43
+28,Sweet Truth 3,Bengaluru,Biryani,3,431.27,107.88,468.45,16.27,48.8
+7,Pizza Corner 1,Mumbai,North Indian,2,619.33,77.5,247.73,14.36,28.73
+14,Dosa Junction 2,Hyderabad,South Indian,3,640.76,148.33,580.57,13.19,39.57
+25,Wok Express 3,Pune,North Indian,2,865.22,180.0,435.69,5.84,11.69
+16,Punjab Grill 2,Delhi,Biryani,2,861.27,180.67,434.51,4.59,9.17
+21,Spice Route 3,Delhi,Chinese,5,536.91,111.71,683.23,-7.06,-35.3
+8,Sweet Truth 1,Bengaluru,South Indian,5,713.82,153.33,828.83,-19.57,-97.83
+13,Biryani House 2,Bengaluru,North Indian,3,766.69,193.38,606.02,-23.37,-70.12
+17,Pizza Corner 2,Mumbai,Fast Food,3,671.17,128.33,402.7,-26.1,-78.3
+1,Spice Route 1,Delhi,North Indian,4,663.28,177.5,728.69,-27.33,-109.31
+3,Biryani House 1,Bengaluru,Chinese,1,387.39,132.48,131.85,-32.63,-32.63
+18,Sweet Truth 2,Bengaluru,Desserts,4,746.14,158.14,592.22,-42.09,-168.36
